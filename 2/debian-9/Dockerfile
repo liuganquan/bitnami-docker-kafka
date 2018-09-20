@@ -11,7 +11,7 @@ RUN bitnami-pkg unpack kafka-2.0.0-1 --checksum a5c583db6dce68f8c71e1f7bd3c92763
 
 ENV DOCKERIZE_VERSION v0.6.1
 RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-darwin-amd64-$DOCKERIZE_VERSION.tar.gz \
-    && tar -C /usr/local/bin -xzvf dockerize-darwin-amd64-$DOCKERIZE_VERSION.tar.gz \
+    && tar -C $HOME/bin -xzvf dockerize-darwin-amd64-$DOCKERIZE_VERSION.tar.gz \
     && rm dockerize-darwin-amd64-$DOCKERIZE_VERSION.tar.gz
 
 COPY rootfs /
