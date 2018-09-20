@@ -10,9 +10,9 @@ RUN bitnami-pkg install java-1.8.181-1 --checksum 66bba4b4a2647f981339d306da7969
 RUN bitnami-pkg unpack kafka-2.0.0-1 --checksum a5c583db6dce68f8c71e1f7bd3c927639ede08f8043cb699049041344c35449c
 
 ENV DOCKERIZE_VERSION v0.6.1
-RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-darwin-amd64-$DOCKERIZE_VERSION.tar.gz \
-    && tar -C $HOME/bin -xzvf dockerize-darwin-amd64-$DOCKERIZE_VERSION.tar.gz \
-    && rm dockerize-darwin-amd64-$DOCKERIZE_VERSION.tar.gz
+RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
+    && tar -C $HOME/bin -xzvf dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
+    && rm dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz
 
 COPY rootfs /
 ENV ALLOW_PLAINTEXT_LISTENER="no" \
